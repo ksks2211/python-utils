@@ -23,7 +23,7 @@
     "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.formatOnSave": true
   },
-  "cSpell.words": ["mypyutils", "qcut"],
+  "cSpell.words": ["dotenv", "mypyutils", "qcut"],
   "python.testing.pytestArgs": ["tests"],
   "python.testing.unittestEnabled": false,
   "python.testing.pytestEnabled": true
