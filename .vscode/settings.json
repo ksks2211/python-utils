@@ -1,0 +1,30 @@
+{
+  // Enable the Python extension
+  "python.languageServer": "Pylance",
+
+  // Auto format on save
+  "editor.formatOnSave": true,
+
+  // Code actions like adding imports, auto-fixes, etc.
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit"
+  },
+
+  // Pylance settings for better intellisense
+  "python.analysis.typeCheckingMode": "basic",
+
+  // Tab settings
+  "editor.tabSize": 4,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+
+  // Additional language-specific settings
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true
+  },
+  "cSpell.words": ["mypyutils", "qcut"],
+  "python.testing.pytestArgs": ["tests"],
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestEnabled": true
+}
