@@ -6,7 +6,7 @@ from python_utils.array_utils import divide_by_bins, percentile
 def test_percentile():
 
     ages = [10, 50, 20, 55, 22, 6, 16, 83, 66, 3, 100]
-    median = percentile(ages, 50)
+    median = percentile(ages, 50.0)
 
     n = len(ages) // 2
     ages.sort()
