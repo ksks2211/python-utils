@@ -1,3 +1,5 @@
+import logging as logger
+
 from python_utils.api_utils.weather import (
     get_weather_by_city,
     get_weather_by_lat_and_lon,

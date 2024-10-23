@@ -9,5 +9,5 @@ def to_json(data):
 
 
 def save_dict_as_json(data: Mapping[str, Any], location: str) -> None:
-    json = to_json(data)
-    write_file(content=json, file_path=location)
+    json_string = to_json(data)
+    write_file(content=json_string, file_path=location)

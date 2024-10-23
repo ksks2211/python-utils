@@ -1,6 +1,5 @@
 {
   // Enable the Python extension
-  "python.languageServer": "Pylance",
 
   // Auto format on save
   "editor.formatOnSave": true,
