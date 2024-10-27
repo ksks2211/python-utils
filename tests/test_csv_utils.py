@@ -22,6 +22,8 @@ def test_read_csv_as_dict_list():
 
 
 def test_save_csv_to_json():
-    file_path = "tmp/seoul.csv"
-    save_path = "tmp/seoul.json"
+
+    city = "tokyo"
+    file_path = f"tmp/{city}.csv"
+    save_path = f"tmp/{city}.json"
     save_csv_to_json(file_path, save_path, "demographics")

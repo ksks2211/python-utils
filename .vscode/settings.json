@@ -22,8 +22,22 @@
     "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.formatOnSave": true
   },
-  "cSpell.words": ["aiohttp", "dotenv", "grnd", "mypyutils", "qcut"],
+  "cSpell.words": [
+    "aiohttp",
+    "dotenv",
+    "grnd",
+    "mypyutils",
+    "Pylance",
+    "pytest",
+    "qcut"
+  ],
   "python.testing.pytestArgs": ["tests"],
   "python.testing.unittestEnabled": false,
-  "python.testing.pytestEnabled": true
+  "python.testing.pytestEnabled": true,
+  "cSpell.ignorePaths": [
+    "node_modules/**", // Ignore node_modules
+    "dist/**", // Ignore build output directory
+    "test/**", // Ignore test directory if not needed
+    "docs/**" // Ignore documentation directory
+  ]
 }
