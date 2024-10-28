@@ -1,4 +1,5 @@
-from typing import TypeVar
+from collections import Counter
+from typing import Any, List, TypeVar
 
 T = TypeVar("T", int, float)
 
@@ -61,3 +62,34 @@ def prev_permutation(arr: list[T]):
         start += 1
         end -= 1
     return True
+
+
+def permutations_with_duplication(elements: List[Any], size: int):
+
+    elements.sort()
+    cnt = Counter(elements)
+    items = list(cnt.keys())
+    items_count = list(cnt.values())
+
+    def find_next(cur: List[Any] = [], remaining_size=size):
+        # Permutation Found
+        if len(cur) == size:
+            yield tuple(cur[:])
+            return
+
+        # Pruning
+        if len(cur) + remaining_size < size:
+            return
+
+        for i in range(len(items)):
+            if items_count[i] > 0:
+                # items[i] 를 고려해서 탐색
+                items_count[i] -= 1
+                cur.append(items[i])
+                yield from find_next(cur, remaining_size - 1)
+
+                # 탐색후 상쇄해서
+                items_count[i] += 1
+                cur.pop()
+
+    yield from find_next()
