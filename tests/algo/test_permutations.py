@@ -3,7 +3,8 @@ from itertools import permutations
 
 from python_utils.algo_utils.permutations import (
     next_permutation,
-    permutations_with_duplication,
+    permutations_with_duplicates,
+    permutations_with_replacement,
     prev_permutation,
 )
 
@@ -25,11 +26,15 @@ def test_permutations():
 
 def test_permutations_with_dup():
     duplicated_items = ["A", "A", "B", "B", "C"]
-
-    for items in permutations_with_duplication(duplicated_items, 3):
-        logger.info(list(items))
-
-    noc = sum(True for _ in permutations_with_duplication(duplicated_items, 3))
+    noc = sum(True for _ in permutations_with_duplicates(duplicated_items, 3))
     assert noc == len(set(permutations(duplicated_items, 3)))
 
     logger.info(f"Number of cases : {noc}")
+
+
+def test_permutations_with_rep():
+    original_items = ["A", "B", "C"]
+    r = 2
+
+    noc = sum(True for _ in permutations_with_replacement(original_items, r))
+    assert noc == len(original_items) ** r

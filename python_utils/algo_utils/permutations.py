@@ -1,4 +1,5 @@
 from collections import Counter
+from itertools import product
 from typing import Any, List, TypeVar
 
 T = TypeVar("T", int, float)
@@ -64,7 +65,40 @@ def prev_permutation(arr: list[T]):
     return True
 
 
-def permutations_with_duplication(elements: List[Any], size: int):
+def permutations_with_replacement(elements: List[Any], size: int):
+    """
+    Generate all permutations of a specified size from a set of unique elements, allowing repeated selections.
+
+    Parameters:
+    elements (iterable): The collection of unique elements to permute.
+    size (int): The number of elements to include in each permutation.
+
+    Returns:
+    list of tuples: A list of permutations with replacement, each represented as a tuple.
+
+    Example:
+    >>> permutations_with_replacement([1, 2, 3], 2)
+    [(1, 1), (1, 2), (1, 3), (2, 1), (2, 2), (2, 3), (3, 1), (3, 2), (3, 3)]
+    """
+
+    yield from product(elements, repeat=size)
+
+
+def permutations_with_duplicates(elements: List[Any], size: int):
+    """
+    Generate all permutations of a specified size from a collection of elements, which may include duplicates.
+
+    Parameters:
+    elements (iterable): The collection of elements (which may include duplicates) to permute.
+    size (int): The number of elements to include in each permutation.
+
+    Returns:
+    list of tuples: A list of permutations considering duplicate elements, each represented as a tuple.
+
+    Example:
+    >>> permutations_with_duplicates([1, 1, 2], 2)
+    [(1, 1), (1, 2), (2, 1)]
+    """
 
     elements.sort()
     cnt = Counter(elements)
