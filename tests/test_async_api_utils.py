@@ -8,6 +8,7 @@ from tests.helper import get_env
 
 @pytest.mark.asyncio
 async def test_weather_api():
+
     owm_api_key = get_env("OWM_API_KEY")
     assert owm_api_key is not None
     city = "madrid"

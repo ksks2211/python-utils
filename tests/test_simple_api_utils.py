@@ -14,7 +14,7 @@ def test_weather_api():
     owm_api_key = get_env("OWM_API_KEY")
     assert owm_api_key is not None
 
-    city = "toronto"
+    city = "london"
 
     response = get_weather_by_city(city, owm_api_key)
     file = f"tmp/{city}-weather.json"
